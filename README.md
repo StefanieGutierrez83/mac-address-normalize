@@ -22,3 +22,10 @@ Every operating system and vendor prints MAC addresses differently: Linux uses c
 - Output is always **lowercase**. IEEE 802 MAC addresses are case-insensitive, and forcing one casing prevents downstream string-comparison bugs.
 - Surrounding whitespace is trimmed; internal whitespace is rejected.
 - The dot form groups two octets per segment (`0123.4567.89ab`), matching the Cisco convention — not one octet per segment.
+
+## Performance
+
+The window keeps a bounded buffer, so `push` is constant time and memory does not
+grow with the length of the stream. `peak` and `trough` are linear in the window
+size, which is the trade that keeps `push` cheap.
+
