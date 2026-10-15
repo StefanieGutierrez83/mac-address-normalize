@@ -1,6 +1,6 @@
 {
   "name": "mac-address-normalize",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Parses and reformats MAC addresses across colon, dash, dot, and bare hex notations into a chosen canonical form.",
   "type": "module",
   "main": "src/index.js",
